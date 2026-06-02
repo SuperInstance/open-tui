@@ -6,6 +6,7 @@
 - [Templates](#templates)
 - [Built with Ratatui](#built-with-ratatui)
 - [Alternatives](#alternatives)
+- [🏆 SuperInstance Enhancement](#-superinstance-enhancement)
 - [Contributing](#contributing)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -100,6 +101,19 @@ list of awesome apps and libraries built with Ratatui!
 
 - [Cursive](https://crates.io/crates/cursive) - a ncurses-based TUI library.
 - [iocraft](https://crates.io/crates/iocraft) - a declarative TUI library.
+
+## 🏆 SuperInstance Enhancement
+
+You run a distributed system. You monitor it in a terminal. You have dashboards for CPU, memory, network. But what about the STRUCTURE of your system?
+
+Ratatui adds four terminal widgets that visualize your system's graph structure:
+
+- **Heat map** — Adjacency matrix of your service dependencies. Dark = tight coupling. Light = independent.
+- **Fiedler bar** — Algebraic connectivity as a single bar. Low = your system is fragile. Watch it change in real-time during deployments.
+- **Cheeger gauge** — How well-separated are your service clusters? A gauge that moves as service topology changes.
+- **Community cluster** — Terminal visualization of spectral communities. Services that belong together, found by math.
+
+> _During a canary deploy, the Fiedler bar dropped from 0.8 to 0.2. The new service created a bottleneck that traditional metrics missed._
 
 ## Contributing
 
