@@ -1,0 +1,30 @@
+# CAPABILITY.toml — open-tui
+# Terminal UI framework with agent dashboard capabilities.
+
+[capability]
+name = "open-tui"
+version = "0.1.0"
+description = "Terminal UI framework with agent dashboard widgets, conservation visualization, and spectral command ranking display"
+
+[capability.capabilities]
+agent_dashboard = "module: ratatui-widgets — dashboard widgets for agent state, conservation budgets, and spectral rankings"
+conservation_viz = "fn render_conservation(report: ConservationReport) -> Widget — visualize γ+H=C state"
+spectral_display = "fn render_spectral(rankings: Vec<RankedFile>) -> Widget — display spectral importance chart"
+command_palette = "fn render_suggestions(suggestions: Vec<SuggestedCommand>) -> Widget — command suggestion palette"
+capability_browser = "fn render_capabilities(manifests: Vec<CapabilityManifest>) -> Widget — browse discovered capabilities"
+
+[capability.exports]
+ConservationWidget = "struct { gamma_bar, eta_bar, capacity_label, status_indicator }"
+SpectralWidget = "struct { bars, labels, eigenvalue_scale }"
+CommandPaletteWidget = "struct { commands, selected, filter }"
+CapabilityBrowserWidget = "struct { manifests, selected, detail_view }"
+
+[capability.depends]
+depends = ["open-terminal", "open-iterator"]
+
+[capability.integrations]
+open-terminal = "Conservation reports and command suggestions rendered as TUI widgets"
+open-iterator = "Spectral code rankings displayed in dashboard"
+open-parallel = "Task scheduling state visualized in real-time"
+open-mind = "Capability browser displays discovered patterns"
+open-application = "Dashboard embedded in application windows"
